@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B01E4E38E300FA234D /* AppDelegate.swift */; };
-		843BB1B31E4E38E300FA234D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B21E4E38E300FA234D /* ViewController.swift */; };
+		843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */; };
 		843BB1B61E4E38E300FA234D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B41E4E38E300FA234D /* Main.storyboard */; };
 		843BB1B81E4E38E300FA234D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B71E4E38E300FA234D /* Assets.xcassets */; };
 		843BB1BB1E4E38E300FA234D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B91E4E38E300FA234D /* LaunchScreen.storyboard */; };
+		843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */; };
+		843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C61E4E3AE400FA234D /* Asset.swift */; };
+		843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */; };
+		843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */; };
+		843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */; };
+		843BB1CF1E4E5F0A00FA234D /* Streams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1CE1E4E5F0A00FA234D /* Streams.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		843BB1AD1E4E38E300FA234D /* HLS-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HLS-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BB1B01E4E38E300FA234D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		843BB1B21E4E38E300FA234D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewController.swift; sourceTree = "<group>"; };
 		843BB1B51E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843BB1B71E4E38E300FA234D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843BB1BA1E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843BB1BC1E4E38E300FA234D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
+		843BB1C61E4E3AE400FA234D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPersistenceManager.swift; sourceTree = "<group>"; };
+		843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPlaybackManager.swift; sourceTree = "<group>"; };
+		843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetListManager.swift; sourceTree = "<group>"; };
+		843BB1CE1E4E5F0A00FA234D /* Streams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Streams.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				843BB1B01E4E38E300FA234D /* AppDelegate.swift */,
-				843BB1B21E4E38E300FA234D /* ViewController.swift */,
+				843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */,
 				843BB1B41E4E38E300FA234D /* Main.storyboard */,
 				843BB1B71E4E38E300FA234D /* Assets.xcassets */,
 				843BB1B91E4E38E300FA234D /* LaunchScreen.storyboard */,
 				843BB1BC1E4E38E300FA234D /* Info.plist */,
+				843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */,
+				843BB1C61E4E3AE400FA234D /* Asset.swift */,
+				843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */,
+				843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */,
+				843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */,
+				843BB1CE1E4E5F0A00FA234D /* Streams.plist */,
 			);
 			path = "HLS-Player";
 			sourceTree = "<group>";
@@ -126,6 +144,7 @@
 			files = (
 				843BB1BB1E4E38E300FA234D /* LaunchScreen.storyboard in Resources */,
 				843BB1B81E4E38E300FA234D /* Assets.xcassets in Resources */,
+				843BB1CF1E4E5F0A00FA234D /* Streams.plist in Resources */,
 				843BB1B61E4E38E300FA234D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843BB1B31E4E38E300FA234D /* ViewController.swift in Sources */,
+				843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */,
+				843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */,
+				843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */,
 				843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */,
+				843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */,
+				843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */,
+				843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
