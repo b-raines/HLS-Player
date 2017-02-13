@@ -18,8 +18,8 @@ class AssetTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.register(AssetTableViewCell.self, forCellReuseIdentifier: AssetTableViewCell.reuseIdentifier)
     
+    tableView.register(AssetTableViewCell.self, forCellReuseIdentifier: AssetTableViewCell.reuseIdentifier)
     tableView.estimatedRowHeight = 75.0
     tableView.rowHeight = UITableViewAutomaticDimension
     
@@ -76,6 +76,17 @@ extension AssetTableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) as? AssetTableViewCell else { return }
+    
+    // Grab a reference for the destinationViewController to use in later delegate callbacks from AssetPlaybackManager.
+    playerViewController = AVPlayerViewController()
+    // Load the new Asset to playback into AssetPlaybackManager.
+    AssetPlaybackManager.shared.setAssetForPlayback(cell.asset)
+    
+    present(playerViewController!, animated: true)
+  }
+
   override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) as? AssetTableViewCell, let asset = cell.asset else { return }
     let downloadState = AssetPersistenceManager.shared.downloadState(for: asset)
@@ -129,7 +140,6 @@ extension AssetTableViewController: AssetPlaybackDelegate {
 extension AssetTableViewController: AssetTableViewCellDelegate {
   func assetTableViewCell(_ cell: AssetTableViewCell, downloadStateDidChange newState: Asset.DownloadState) {
     guard let indexPath = tableView.indexPath(for: cell) else { return }
-    
     tableView.reloadRows(at: [indexPath], with: .automatic)
   }
 }

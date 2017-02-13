@@ -12,9 +12,13 @@ class AssetTableViewCell: UITableViewCell {
   
   // MARK: Properties
   static let reuseIdentifier = "AssetTableViewCellIdentifier"
-  fileprivate let assetNameLabel = UILabel()
-  fileprivate let downloadStateLabel = UILabel()
-  fileprivate let downloadProgressView = UIProgressView(progressViewStyle: .default)
+  private let assetNameLabel = UILabel()
+  private let downloadStateLabel = UILabel()
+  private let downloadProgressView = UIProgressView(progressViewStyle: .default)
+  private let topMargin: CGFloat = 12
+  private let bottomMargin: CGFloat = -12
+  private let leadingMargin: CGFloat = 12
+  private let trailingMargin: CGFloat = -12
   weak var delegate: AssetTableViewCellDelegate?
   
   var asset: Asset? {
@@ -45,6 +49,16 @@ class AssetTableViewCell: UITableViewCell {
     }
   }
   
+  // MARK: Initialization
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    config()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   // MARK: Notification handling
   func handleAssetDownloadStateChangedNotification(_ notification: Notification) {
     guard let assetStreamName = notification.userInfo?[Asset.Keys.name] as? String,
@@ -71,6 +85,30 @@ class AssetTableViewCell: UITableViewCell {
     guard let progress = notification.userInfo?[Asset.Keys.percentDownloaded] as? Double else { return }
     
     self.downloadProgressView.setProgress(Float(progress), animated: true)
+  }
+  
+  func config() {
+    let views = [
+      "name": assetNameLabel,
+      "downloadState": downloadStateLabel,
+      "downloadProgress": downloadProgressView
+    ]
+    
+    for sv in views.values {
+      sv.translatesAutoresizingMaskIntoConstraints = false
+      contentView.addSubview(sv)
+      sv.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: leadingMargin).isActive = true
+      sv.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: trailingMargin).isActive = true
+    }
+    
+    downloadProgressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: trailingMargin * 3).isActive = true
+    
+    contentView.addConstraints(NSLayoutConstraint.constraints(
+      withVisualFormat: "V:|-(topMargin)-[name]-(topMargin)-[downloadState]-(topMargin)-[downloadProgress]-(topMargin)-|",
+      options: [],
+      metrics: ["topMargin": topMargin, "bottomMargin": bottomMargin],
+      views: views
+    ))
   }
   
   deinit {
