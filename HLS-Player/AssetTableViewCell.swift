@@ -35,8 +35,8 @@ class AssetTableViewCell: UITableViewCell {
         downloadStateLabel.text = downloadState.rawValue
         
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadStateChangedNotification(_:)), name: AssetDownloadStateChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadProgressNotification(_:)), name: AssetDownloadProgressNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadStateChangedNotification(_:)), name: AssetPersistenceManager.downloadStateChangedNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadProgressNotification(_:)), name: AssetPersistenceManager.downloadProgressNotification, object: nil)
       } else {
         downloadProgressView.isHidden = false
         assetNameLabel.text = ""

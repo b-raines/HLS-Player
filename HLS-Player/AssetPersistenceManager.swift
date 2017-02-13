@@ -9,19 +9,19 @@
 import Foundation
 import AVFoundation
 
-/// Notification for when download progress has changed.
-let AssetDownloadProgressNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetDownloadProgressNotification")
-
-/// Notification for when the download state of an Asset has changed.
-let AssetDownloadStateChangedNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetDownloadStateChangedNotification")
-
-/// Notification for when AssetPersistenceManager has completely restored its state.
-let AssetPersistenceManagerDidRestoreStateNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetPersistenceManagerDidRestoreStateNotification")
-
 class AssetPersistenceManager: NSObject {
   
   // MARK: Properties
   static let shared = AssetPersistenceManager()
+  
+  /// downloadProgressNotificationNotification for when download progress has changed.
+  static let downloadProgressNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetDownloadProgressNotification")
+  
+  /// Notification for when the download state of an Asset has changed.
+  static let downloadStateChangedNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetDownloadStateChangedNotification")
+  
+  /// Notification for when AssetPersistenceManager has completely restored its state.
+  static let persistenceManagerDidRestoreStateNotification: NSNotification.Name = NSNotification.Name(rawValue: "AssetPersistenceManagerDidRestoreStateNotification")
   
   /// Internal Bool used to track if the AssetPersistenceManager finished restoring its state.
   private var didRestorePersistenceManager = false
@@ -60,7 +60,7 @@ class AssetPersistenceManager: NSObject {
         self.activeDownloadsMap[assetDownloadTask] = asset
       }
       
-      NotificationCenter.default.post(name: AssetPersistenceManagerDidRestoreStateNotification, object: nil)
+      NotificationCenter.default.post(name: AssetPersistenceManager.persistenceManagerDidRestoreStateNotification, object: nil)
     }
   }
   
@@ -80,7 +80,7 @@ class AssetPersistenceManager: NSObject {
       Asset.Keys.downloadState: Asset.DownloadState.downloading.rawValue
     ]
     
-    NotificationCenter.default.post(name: AssetDownloadStateChangedNotification, object: nil, userInfo:  userInfo)
+    NotificationCenter.default.post(name: AssetPersistenceManager.downloadStateChangedNotification, object: nil, userInfo:  userInfo)
   }
   
   /// Returns an Asset given a specific name if that Asset is associated with an active download.
@@ -142,7 +142,7 @@ class AssetPersistenceManager: NSObject {
           Asset.Keys.downloadState: Asset.DownloadState.notDownloaded.rawValue
         ]
         
-        NotificationCenter.default.post(name: AssetDownloadStateChangedNotification, object: nil, userInfo:  userInfo)
+        NotificationCenter.default.post(name: AssetPersistenceManager.downloadStateChangedNotification, object: nil, userInfo:  userInfo)
       }
     } catch {
       print("An error occured deleting the file: \(error)")
@@ -192,7 +192,7 @@ extension AssetPersistenceManager: AVAssetDownloadDelegate {
       userInfo[Asset.Keys.downloadState] = Asset.DownloadState.downloaded.rawValue
     }
     
-    NotificationCenter.default.post(name: AssetDownloadStateChangedNotification, object: nil, userInfo: userInfo)
+    NotificationCenter.default.post(name: AssetPersistenceManager.downloadStateChangedNotification, object: nil, userInfo: userInfo)
   }
   
   func urlSession(_ session: URLSession, assetDownloadTask: AVAssetDownloadTask, didFinishDownloadingTo location: URL) {
@@ -216,6 +216,6 @@ extension AssetPersistenceManager: AVAssetDownloadDelegate {
       Asset.Keys.percentDownloaded: percentComplete
     ]
     
-    NotificationCenter.default.post(name: AssetDownloadProgressNotification, object: nil, userInfo:  userInfo)
+    NotificationCenter.default.post(name: AssetPersistenceManager.downloadProgressNotification, object: nil, userInfo:  userInfo)
   }
 }

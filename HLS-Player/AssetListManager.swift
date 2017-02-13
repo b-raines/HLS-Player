@@ -31,11 +31,11 @@ class AssetListManager: NSObject {
      from existng `AVAssetDownloadTasks.
      */
     let notificationCenter = NotificationCenter.default
-    notificationCenter.addObserver(self, selector: #selector(handleAssetPersistenceManagerDidRestoreStateNotification(_:)), name: AssetPersistenceManagerDidRestoreStateNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(handleAssetPersistenceManagerDidRestoreStateNotification(_:)), name: AssetPersistenceManager.persistenceManagerDidRestoreStateNotification, object: nil)
   }
   
   deinit {
-    NotificationCenter.default.removeObserver(self, name: AssetPersistenceManagerDidRestoreStateNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: AssetPersistenceManager.persistenceManagerDidRestoreStateNotification, object: nil)
   }
   
   // MARK: Asset access

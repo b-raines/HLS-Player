@@ -30,21 +30,21 @@ extension Asset {
 extension Asset {
   struct Keys {
     /**
-     Key for the Asset name, used for `AssetDownloadProgressNotification` and
-     `AssetDownloadStateChangedNotification` Notifications as well as
+     Key for the Asset name, used for `AssetPersistenceManager.downloadProgressNotification` and
+     `AssetPersistenceManager.downloadStateChangedNotification` Notifications as well as
      AssetListManager.
      */
     static let name = "AssetNameKey"
     
     /**
      Key for the Asset download percentage, used for
-     `AssetDownloadProgressNotification` Notification.
+     `AssetPersistenceManager.downloadProgressNotification` Notification.
      */
     static let percentDownloaded = "AssetPercentDownloadedKey"
     
     /**
      Key for the Asset download state, used for
-     `AssetDownloadStateChangedNotification` Notification.
+     `AssetPersistenceManager.downloadStateChangedNotification` Notification.
      */
     static let downloadState = "AssetDownloadStateKey"
   }
