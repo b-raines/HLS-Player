@@ -101,6 +101,7 @@ class AssetTableViewCell: UITableViewCell {
       sv.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: trailingMargin).isActive = true
     }
     
+    downloadProgressView.isHidden = true
     downloadProgressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: trailingMargin * 3).isActive = true
     
     contentView.addConstraints(NSLayoutConstraint.constraints(

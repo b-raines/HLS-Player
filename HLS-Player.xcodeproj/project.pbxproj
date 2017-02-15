@@ -18,6 +18,12 @@
 		843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */; };
 		843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */; };
 		843BB1CF1E4E5F0A00FA234D /* Streams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1CE1E4E5F0A00FA234D /* Streams.plist */; };
+		846587E41E54AA8500B40B36 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E31E54AA8500B40B36 /* Meditation.swift */; };
+		846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E51E54AB0300B40B36 /* CourseSession.swift */; };
+		846587E81E54AB0F00B40B36 /* MeditationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E71E54AB0F00B40B36 /* MeditationCategory.swift */; };
+		846587EA1E54AB1400B40B36 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E91E54AB1400B40B36 /* Teacher.swift */; };
+		846587EC1E54ABE000B40B36 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587EB1E54ABE000B40B36 /* Course.swift */; };
+		846587EE1E54AC4000B40B36 /* CourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587ED1E54AC4000B40B36 /* CourseCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,15 +31,21 @@
 		843BB1B01E4E38E300FA234D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewController.swift; sourceTree = "<group>"; };
 		843BB1B51E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		843BB1B71E4E38E300FA234D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		843BB1B71E4E38E300FA234D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "HLS-Player/Assets.xcassets"; sourceTree = "<group>"; };
 		843BB1BA1E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		843BB1BC1E4E38E300FA234D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843BB1BC1E4E38E300FA234D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "HLS-Player/Info.plist"; sourceTree = "<group>"; };
 		843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
 		843BB1C61E4E3AE400FA234D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPersistenceManager.swift; sourceTree = "<group>"; };
 		843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPlaybackManager.swift; sourceTree = "<group>"; };
 		843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetListManager.swift; sourceTree = "<group>"; };
-		843BB1CE1E4E5F0A00FA234D /* Streams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Streams.plist; sourceTree = "<group>"; };
+		843BB1CE1E4E5F0A00FA234D /* Streams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Streams.plist; path = "HLS-Player/Streams.plist"; sourceTree = "<group>"; };
+		846587E31E54AA8500B40B36 /* Meditation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
+		846587E51E54AB0300B40B36 /* CourseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSession.swift; sourceTree = "<group>"; };
+		846587E71E54AB0F00B40B36 /* MeditationCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationCategory.swift; sourceTree = "<group>"; };
+		846587E91E54AB1400B40B36 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		846587EB1E54ABE000B40B36 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		846587ED1E54AC4000B40B36 /* CourseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				843BB1AF1E4E38E300FA234D /* HLS-Player */,
+				843BB1CE1E4E5F0A00FA234D /* Streams.plist */,
+				843BB1BC1E4E38E300FA234D /* Info.plist */,
+				843BB1B71E4E38E300FA234D /* Assets.xcassets */,
 				843BB1AE1E4E38E300FA234D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,19 +82,62 @@
 			isa = PBXGroup;
 			children = (
 				843BB1B01E4E38E300FA234D /* AppDelegate.swift */,
-				843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */,
-				843BB1B41E4E38E300FA234D /* Main.storyboard */,
-				843BB1B71E4E38E300FA234D /* Assets.xcassets */,
-				843BB1B91E4E38E300FA234D /* LaunchScreen.storyboard */,
-				843BB1BC1E4E38E300FA234D /* Info.plist */,
-				843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */,
+				846587F21E54ACA800B40B36 /* Storyboards */,
+				846587F11E54AC9F00B40B36 /* ViewControllers */,
+				846587F31E54ACAF00B40B36 /* Views */,
+				846587F01E54AC7C00B40B36 /* Managers */,
+				846587EF1E54AC6D00B40B36 /* Models */,
+			);
+			path = "HLS-Player";
+			sourceTree = "<group>";
+		};
+		846587EF1E54AC6D00B40B36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				843BB1C61E4E3AE400FA234D /* Asset.swift */,
+				846587E31E54AA8500B40B36 /* Meditation.swift */,
+				846587E71E54AB0F00B40B36 /* MeditationCategory.swift */,
+				846587E91E54AB1400B40B36 /* Teacher.swift */,
+				846587E51E54AB0300B40B36 /* CourseSession.swift */,
+				846587EB1E54ABE000B40B36 /* Course.swift */,
+				846587ED1E54AC4000B40B36 /* CourseCategory.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		846587F01E54AC7C00B40B36 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
 				843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */,
 				843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */,
 				843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */,
-				843BB1CE1E4E5F0A00FA234D /* Streams.plist */,
 			);
-			path = "HLS-Player";
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		846587F11E54AC9F00B40B36 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		846587F21E54ACA800B40B36 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				843BB1B41E4E38E300FA234D /* Main.storyboard */,
+				843BB1B91E4E38E300FA234D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		846587F31E54ACAF00B40B36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,13 +214,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846587EC1E54ABE000B40B36 /* Course.swift in Sources */,
 				843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */,
+				846587E41E54AA8500B40B36 /* Meditation.swift in Sources */,
 				843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */,
 				843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */,
 				843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */,
 				843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */,
 				843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */,
+				846587EE1E54AC4000B40B36 /* CourseCategory.swift in Sources */,
+				846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */,
 				843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */,
+				846587E81E54AB0F00B40B36 /* MeditationCategory.swift in Sources */,
+				846587EA1E54AB1400B40B36 /* Teacher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +388,7 @@
 				843BB1C11E4E38E300FA234D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
