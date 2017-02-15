@@ -8,14 +8,7 @@
 
 import Foundation
 
-class Course {
-  var uuid: String = ""
+struct Course {
   var title: String = ""
-  var summary: String = ""
-  var backgroundImageURL: String = ""
-  var position: Int = 999
-  var teacherUUID: String?
-  var category: CourseCategory?
   var sessions: [CourseSession] = []
-  var teacher: Teacher?
 }

@@ -83,8 +83,30 @@ class AssetPersistenceManager: NSObject {
     NotificationCenter.default.post(name: AssetPersistenceManager.downloadStateChangedNotification, object: nil, userInfo:  userInfo)
   }
   
+  /// Returns an Asset from file on disk, with active download, or remote
+  func asset(for urlString: String) -> Asset? {
+    guard let url = URL(string: urlString) else { return nil }
+    let streamName = url.deletingPathExtension().lastPathComponent
+    // To ensure that we are reusing AVURLAssets we first find out if there is one available for an already active download.
+    if let asset = AssetPersistenceManager.shared.assetForStream(withName: streamName) {
+      return asset
+    } else {
+      /*
+       If an existing `AVURLAsset` is not available for an active
+       download we then see if there is a file URL available to
+       create an asset from.
+       */
+      if let asset = AssetPersistenceManager.shared.localAssetForStream(withName: streamName) {
+        return asset
+      } else {
+        // No instance of AVURLAsset exists for this stream, create new instance.
+        return Asset(name: streamName, urlAsset: AVURLAsset(url: url))
+      }
+    }
+  }
+  
   /// Returns an Asset given a specific name if that Asset is associated with an active download.
-  func assetForStream(withName name: String) -> Asset? {
+  private func assetForStream(withName name: String) -> Asset? {
     for (_, assetValue) in activeDownloadsMap {
       if name == assetValue.name {
         return assetValue
@@ -95,7 +117,7 @@ class AssetPersistenceManager: NSObject {
   }
   
   /// Returns an Asset pointing to a file on disk if it exists.
-  func localAssetForStream(withName name: String) -> Asset? {
+  private func localAssetForStream(withName name: String) -> Asset? {
     guard let localFileLocation = userDefaults.value(forKey: name) as? String else { return nil }
     let url = baseDownloadURL.appendingPathComponent(localFileLocation)
     

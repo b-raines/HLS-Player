@@ -8,11 +8,7 @@
 
 import Foundation
 
-class Meditation {
+struct Meditation {
   var title: String = ""
-  var position: Int = 999
-  var session: CourseSession?
-  var category: MeditationCategory?
   var audioFiles: [AudioFile] = []
-  var teacher: Teacher?
 }

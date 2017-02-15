@@ -20,10 +20,10 @@
 		843BB1CF1E4E5F0A00FA234D /* Streams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1CE1E4E5F0A00FA234D /* Streams.plist */; };
 		846587E41E54AA8500B40B36 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E31E54AA8500B40B36 /* Meditation.swift */; };
 		846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E51E54AB0300B40B36 /* CourseSession.swift */; };
-		846587E81E54AB0F00B40B36 /* MeditationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E71E54AB0F00B40B36 /* MeditationCategory.swift */; };
-		846587EA1E54AB1400B40B36 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E91E54AB1400B40B36 /* Teacher.swift */; };
 		846587EC1E54ABE000B40B36 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587EB1E54ABE000B40B36 /* Course.swift */; };
-		846587EE1E54AC4000B40B36 /* CourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587ED1E54AC4000B40B36 /* CourseCategory.swift */; };
+		846587F51E54AD4D00B40B36 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F41E54AD4D00B40B36 /* CourseViewModel.swift */; };
+		846587F81E54AD7A00B40B36 /* CourseSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */; };
+		846587FA1E54B19700B40B36 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F91E54B19700B40B36 /* AudioFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +42,10 @@
 		843BB1CE1E4E5F0A00FA234D /* Streams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Streams.plist; path = "HLS-Player/Streams.plist"; sourceTree = "<group>"; };
 		846587E31E54AA8500B40B36 /* Meditation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		846587E51E54AB0300B40B36 /* CourseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSession.swift; sourceTree = "<group>"; };
-		846587E71E54AB0F00B40B36 /* MeditationCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationCategory.swift; sourceTree = "<group>"; };
-		846587E91E54AB1400B40B36 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		846587EB1E54ABE000B40B36 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		846587ED1E54AC4000B40B36 /* CourseCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCategory.swift; sourceTree = "<group>"; };
+		846587F41E54AD4D00B40B36 /* CourseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSessionViewModel.swift; sourceTree = "<group>"; };
+		846587F91E54B19700B40B36 /* AudioFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,7 @@
 				846587F31E54ACAF00B40B36 /* Views */,
 				846587F01E54AC7C00B40B36 /* Managers */,
 				846587EF1E54AC6D00B40B36 /* Models */,
+				846587F61E54AD5300B40B36 /* ViewModels */,
 			);
 			path = "HLS-Player";
 			sourceTree = "<group>";
@@ -96,11 +97,9 @@
 			children = (
 				843BB1C61E4E3AE400FA234D /* Asset.swift */,
 				846587E31E54AA8500B40B36 /* Meditation.swift */,
-				846587E71E54AB0F00B40B36 /* MeditationCategory.swift */,
-				846587E91E54AB1400B40B36 /* Teacher.swift */,
 				846587E51E54AB0300B40B36 /* CourseSession.swift */,
 				846587EB1E54ABE000B40B36 /* Course.swift */,
-				846587ED1E54AC4000B40B36 /* CourseCategory.swift */,
+				846587F91E54B19700B40B36 /* AudioFile.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -138,6 +137,15 @@
 				843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		846587F61E54AD5300B40B36 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				846587F41E54AD4D00B40B36 /* CourseViewModel.swift */,
+				846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,16 +225,16 @@
 				846587EC1E54ABE000B40B36 /* Course.swift in Sources */,
 				843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */,
 				846587E41E54AA8500B40B36 /* Meditation.swift in Sources */,
+				846587F81E54AD7A00B40B36 /* CourseSessionViewModel.swift in Sources */,
 				843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */,
 				843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */,
 				843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */,
 				843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */,
 				843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */,
-				846587EE1E54AC4000B40B36 /* CourseCategory.swift in Sources */,
+				846587FA1E54B19700B40B36 /* AudioFile.swift in Sources */,
+				846587F51E54AD4D00B40B36 /* CourseViewModel.swift in Sources */,
 				846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */,
 				843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */,
-				846587E81E54AB0F00B40B36 /* MeditationCategory.swift in Sources */,
-				846587EA1E54AB1400B40B36 /* Teacher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
