@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import ReactiveSwift
 
 struct CourseSessionViewModel {
   let title: String

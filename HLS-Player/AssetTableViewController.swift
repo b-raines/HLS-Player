@@ -13,7 +13,7 @@ import AVKit
 class AssetTableViewController: UITableViewController {
   
   // MARK: Properties
-  let cellReuseIdentifier = "assetCell"
+  fileprivate let viewModel = CourseViewModel.withSampleData()
   fileprivate var playerViewController: AVPlayerViewController?
   
   override func viewDidLoad() {
@@ -60,16 +60,15 @@ extension AssetTableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return AssetListManager.shared.numberOfAssets()
+    return viewModel.courseSessions.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: AssetTableViewCell.reuseIdentifier, for: indexPath)
     
-    let asset = AssetListManager.shared.asset(at: indexPath.row)
-    
     if let cell = cell as? AssetTableViewCell {
-      cell.asset = asset
+      let session = viewModel.courseSessions[indexPath.row]
+      cell.asset = session.videoAsset
       cell.delegate = self
     }
     

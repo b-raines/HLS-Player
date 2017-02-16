@@ -54,35 +54,15 @@ class AssetListManager: NSObject {
     DispatchQueue.main.async {
       // Get the file path of the Streams.plist from the application bundle.
       guard let streamsFilepath = Bundle.main.path(forResource: "Streams", ofType: "plist") else { return }
-      
       // Create an array from the contents of the Streams.plist file.
       guard let arrayOfStreams = NSArray(contentsOfFile: streamsFilepath) as? [[String: AnyObject]] else { return }
       
       // Iterate over each dictionary in the array.
       for entry in arrayOfStreams {
         // Get the Stream name from the dictionary
-        guard let streamName = entry[Asset.Keys.name] as? String else { continue }
-        
-        // To ensure that we are reusing AVURLAssets we first find out if there is one available for an already active download.
-        if let asset = AssetPersistenceManager.shared.assetForStream(withName: streamName) {
+        guard let streamPlaylistURLString = entry["StreamPlaylistURL"] as? String else { return }
+        if let asset = AssetPersistenceManager.shared.asset(for: streamPlaylistURLString) {
           self.assets.append(asset)
-        } else {
-          /*
-           If an existing `AVURLAsset` is not available for an active
-           download we then see if there is a file URL available to
-           create an asset from.
-           */
-          if let asset = AssetPersistenceManager.shared.localAssetForStream(withName: streamName) {
-            self.assets.append(asset)
-          } else {
-            // No instance of AVURLAsset exists for this stream, create new instance.
-            guard let streamPlaylistURLString = entry["StreamPlaylistURL"] as? String else { continue }
-            
-            let streamPlaylistURL = URL(string: streamPlaylistURLString)!
-            let asset = Asset(name: streamName, urlAsset: AVURLAsset(url: streamPlaylistURL))
-            
-            self.assets.append(asset)
-          }
         }
       }
       
