@@ -11,7 +11,7 @@ import UIKit
 class FadeAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
   
   // MARK: Properties
-  private let transitionDuration: TimeInterval = 0.7
+  private let transitionDuration: TimeInterval = 0.5
   var presenting = true
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -26,28 +26,23 @@ class FadeAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     guard let fromView = fromVC.view else { return }
     let containerView = transitionContext.containerView
     
-    if presenting {
-      toView.alpha = 0
-      containerView.insertSubview(toView, aboveSubview: fromView)
-    } else {
-      containerView.insertSubview(toView, belowSubview: fromView)
-    }
-    
-    toView.frame = transitionContext.finalFrame(for: toVC)
+    containerView.insertSubview(toView, belowSubview: fromView)
+    toView.frame = fromView.frame
+    toView.alpha = 1
     
     UIView.animate(
       withDuration: transitionDuration,
       delay: 0,
       options: [.curveEaseInOut],
-      animations: { [weak self] _ in
-        if let presenting = self?.presenting, presenting {
-          toView.alpha = 1
-        } else {
-          fromView.alpha = 0
-        }
+      animations: {
+        fromView.alpha = 0
       }, completion: { _ in
-        fromView.removeFromSuperview()
-        transitionContext.completeTransition(true)
+        if transitionContext.transitionWasCancelled {
+          toView.removeFromSuperview()
+        } else {
+          fromView.removeFromSuperview()
+        }
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     })
   }
 }
