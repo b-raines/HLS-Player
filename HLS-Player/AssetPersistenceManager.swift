@@ -84,7 +84,7 @@ class AssetPersistenceManager: NSObject {
   }
   
   /// Returns an Asset from file on disk, with active download, or remote
-  func asset(for urlString: String) -> Asset? {
+  func asset(forUrl urlString: String) -> Asset? {
     guard let url = URL(string: urlString) else { return nil }
     let streamName = url.deletingPathExtension().lastPathComponent
     // To ensure that we are reusing AVURLAssets we first find out if there is one available for an already active download.

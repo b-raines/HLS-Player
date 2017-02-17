@@ -61,7 +61,7 @@ class AssetListManager: NSObject {
       for entry in arrayOfStreams {
         // Get the Stream name from the dictionary
         guard let streamPlaylistURLString = entry["StreamPlaylistURL"] as? String else { return }
-        if let asset = AssetPersistenceManager.shared.asset(for: streamPlaylistURLString) {
+        if let asset = AssetPersistenceManager.shared.asset(forUrl: streamPlaylistURLString) {
           self.assets.append(asset)
         }
       }

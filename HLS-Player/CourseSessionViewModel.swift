@@ -8,26 +8,26 @@
 
 import Foundation
 import AVFoundation
-import ReactiveSwift
 
 struct CourseSessionViewModel {
   let title: String
   let videoAsset: Asset?
-  let audioAssets: [Asset]?
+  let meditation: MeditationViewModel?
 }
 
 extension CourseSessionViewModel {
   init(courseSession: CourseSession) {
     let videoAsset = courseSession.videoURL
-      .flatMap { AssetPersistenceManager.shared.asset(for: $0) }
-    let audioAssets = courseSession.meditation?.audioFiles
-      .flatMap { $0.urlString }
-      .flatMap { AssetPersistenceManager.shared.asset(for: $0) }
+      .flatMap { AssetPersistenceManager.shared.asset(forUrl: $0) }
+    var meditationViewModel: MeditationViewModel? = nil
+    if let meditation = courseSession.meditation {
+      meditationViewModel = MeditationViewModel(meditation: meditation)
+    }
     
     self.init(
       title: courseSession.title,
       videoAsset: videoAsset,
-      audioAssets: audioAssets
+      meditation: meditationViewModel
     )
   }
 }
@@ -38,7 +38,8 @@ extension CourseSessionViewModel {
     let audioFile = AudioFile(urlString: "https://d3fw0mens6o5gn.cloudfront.net/audio/Day%2B1_v2-Simple-but-not-easy/index.m3u8")
     let meditation = Meditation(
       title: "Meditation",
-      audioFiles: [audioFile]
+      audioFiles: [audioFile],
+      courseSession: nil
     )
     let session = CourseSession(
       title: title,

@@ -9,5 +9,16 @@
 import Foundation
 
 struct AudioFile {
-  var urlString: String?
+  let urlString: String?
+  let asset: Asset?
+  
+  init(urlString: String?) {
+    self.urlString = urlString
+    var asset: Asset? = nil
+    if let urlString = urlString {
+      asset = AssetPersistenceManager.shared.asset(forUrl: urlString)
+    }
+    
+    self.asset = asset
+  }
 }

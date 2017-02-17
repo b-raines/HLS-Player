@@ -9,6 +9,7 @@
 import Foundation
 
 struct Meditation {
-  var title: String = ""
-  var audioFiles: [AudioFile] = []
+  let title: String
+  let audioFiles: [AudioFile]
+  var courseSession: CourseSession?
 }

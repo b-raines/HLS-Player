@@ -9,7 +9,11 @@
 import Foundation
 
 struct CourseSession {
-  var title: String = ""
-  var videoURL: String?
-  var meditation: Meditation?
+  let title: String
+  let videoURL: String?
+  var meditation: Meditation? {
+    didSet {
+      meditation?.courseSession = self
+    }
+  }
 }

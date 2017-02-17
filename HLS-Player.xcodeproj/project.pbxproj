@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B01E4E38E300FA234D /* AppDelegate.swift */; };
-		843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */; };
+		843BB1B31E4E38E300FA234D /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1B21E4E38E300FA234D /* CourseTableViewController.swift */; };
 		843BB1B61E4E38E300FA234D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B41E4E38E300FA234D /* Main.storyboard */; };
 		843BB1B81E4E38E300FA234D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B71E4E38E300FA234D /* Assets.xcassets */; };
 		843BB1BB1E4E38E300FA234D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1B91E4E38E300FA234D /* LaunchScreen.storyboard */; };
-		843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */; };
+		843BB1C31E4E39EB00FA234D /* CourseSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C21E4E39EB00FA234D /* CourseSessionTableViewCell.swift */; };
 		843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C61E4E3AE400FA234D /* Asset.swift */; };
 		843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */; };
 		843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */; };
@@ -24,17 +24,19 @@
 		846587F51E54AD4D00B40B36 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F41E54AD4D00B40B36 /* CourseViewModel.swift */; };
 		846587F81E54AD7A00B40B36 /* CourseSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */; };
 		846587FA1E54B19700B40B36 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587F91E54B19700B40B36 /* AudioFile.swift */; };
+		846587FC1E56563F00B40B36 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587FB1E56563F00B40B36 /* MeditationViewModel.swift */; };
+		846588001E5754FF00B40B36 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587FF1E5754FF00B40B36 /* MeditationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		843BB1AD1E4E38E300FA234D /* HLS-Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HLS-Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843BB1B01E4E38E300FA234D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewController.swift; sourceTree = "<group>"; };
+		843BB1B21E4E38E300FA234D /* CourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		843BB1B51E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843BB1B71E4E38E300FA234D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "HLS-Player/Assets.xcassets"; sourceTree = "<group>"; };
 		843BB1BA1E4E38E300FA234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843BB1BC1E4E38E300FA234D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "HLS-Player/Info.plist"; sourceTree = "<group>"; };
-		843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
+		843BB1C21E4E39EB00FA234D /* CourseSessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSessionTableViewCell.swift; sourceTree = "<group>"; };
 		843BB1C61E4E3AE400FA234D /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		843BB1C81E4E3C9100FA234D /* AssetPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPersistenceManager.swift; sourceTree = "<group>"; };
 		843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPlaybackManager.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		846587F41E54AD4D00B40B36 /* CourseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSessionViewModel.swift; sourceTree = "<group>"; };
 		846587F91E54B19700B40B36 /* AudioFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
+		846587FB1E56563F00B40B36 /* MeditationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		846587FF1E5754FF00B40B36 /* MeditationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,8 @@
 		846587F11E54AC9F00B40B36 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				843BB1B21E4E38E300FA234D /* AssetTableViewController.swift */,
+				843BB1B21E4E38E300FA234D /* CourseTableViewController.swift */,
+				846587FF1E5754FF00B40B36 /* MeditationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -134,7 +139,7 @@
 		846587F31E54ACAF00B40B36 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				843BB1C21E4E39EB00FA234D /* AssetTableViewCell.swift */,
+				843BB1C21E4E39EB00FA234D /* CourseSessionTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				846587F41E54AD4D00B40B36 /* CourseViewModel.swift */,
 				846587F71E54AD7A00B40B36 /* CourseSessionViewModel.swift */,
+				846587FB1E56563F00B40B36 /* MeditationViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -222,15 +228,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846587FC1E56563F00B40B36 /* MeditationViewModel.swift in Sources */,
 				846587EC1E54ABE000B40B36 /* Course.swift in Sources */,
 				843BB1C91E4E3C9100FA234D /* AssetPersistenceManager.swift in Sources */,
 				846587E41E54AA8500B40B36 /* Meditation.swift in Sources */,
 				846587F81E54AD7A00B40B36 /* CourseSessionViewModel.swift in Sources */,
-				843BB1B31E4E38E300FA234D /* AssetTableViewController.swift in Sources */,
+				843BB1B31E4E38E300FA234D /* CourseTableViewController.swift in Sources */,
 				843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */,
+				846588001E5754FF00B40B36 /* MeditationViewController.swift in Sources */,
 				843BB1B11E4E38E300FA234D /* AppDelegate.swift in Sources */,
 				843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */,
-				843BB1C31E4E39EB00FA234D /* AssetTableViewCell.swift in Sources */,
+				843BB1C31E4E39EB00FA234D /* CourseSessionTableViewCell.swift in Sources */,
 				846587FA1E54B19700B40B36 /* AudioFile.swift in Sources */,
 				846587F51E54AD4D00B40B36 /* CourseViewModel.swift in Sources */,
 				846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */,

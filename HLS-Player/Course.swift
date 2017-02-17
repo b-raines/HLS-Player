@@ -9,6 +9,6 @@
 import Foundation
 
 struct Course {
-  var title: String = ""
-  var sessions: [CourseSession] = []
+  let title: String
+  let sessions: [CourseSession]
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bFZ-Hh-pKK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="em0-UC-01n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,16 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Asset Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Ad2-uu-XHB">
+            <objects>
+                <navigationController id="em0-UC-01n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zpk-9w-inS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bFZ-Hh-pKK" kind="relationship" relationship="rootViewController" id="PpP-mX-sa8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R6i-sR-CB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="47"/>
+        </scene>
+        <!--Course Table View Controller-->
         <scene sceneID="iqE-zr-2DN">
             <objects>
-                <tableViewController id="bFZ-Hh-pKK" customClass="AssetTableViewController" customModule="HLS_Player" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bFZ-Hh-pKK" customClass="CourseTableViewController" customModule="HLS_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mp2-6O-L6V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cpf-L2-9yp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseSessionTableViewCellIdentifier" id="cpf-L2-9yp" customClass="CourseSessionTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpf-L2-9yp" id="4Zk-9s-Gxd">
@@ -32,10 +48,11 @@
                             <outlet property="delegate" destination="bFZ-Hh-pKK" id="5e6-g6-Pxc"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="a4w-Js-moV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAg-8V-HvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="48"/>
+            <point key="canvasLocation" x="395" y="47"/>
         </scene>
     </scenes>
 </document>

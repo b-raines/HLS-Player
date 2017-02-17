@@ -1,5 +1,5 @@
 //
-//  AssetTableViewCell.swift
+//  CourseSessionTableViewCell.swift
 //  HLS-Player
 //
 //  Created by Brent Raines on 2/10/17.
@@ -8,46 +8,50 @@
 
 import UIKit
 
-class AssetTableViewCell: UITableViewCell {
+class CourseSessionTableViewCell: UITableViewCell {
   
   // MARK: Properties
-  static let reuseIdentifier = "AssetTableViewCellIdentifier"
-  private let assetNameLabel = UILabel()
+  static let reuseIdentifier = "CourseSessionTableViewCellIdentifier"
+  private let titleLabel = UILabel()
   private let downloadStateLabel = UILabel()
   private let downloadProgressView = UIProgressView(progressViewStyle: .default)
   private let topMargin: CGFloat = 12
   private let bottomMargin: CGFloat = -12
   private let leadingMargin: CGFloat = 12
   private let trailingMargin: CGFloat = -12
-  weak var delegate: AssetTableViewCellDelegate?
-  
-  var asset: Asset? {
+  weak var delegate: CourseSessionTableViewCellDelegate?
+  var courseSession: CourseSessionViewModel? {
     didSet {
-      if let asset = asset {
-        let downloadState = AssetPersistenceManager.shared.downloadState(for: asset)
-        
-        switch downloadState {
-        case .downloaded:
-          downloadProgressView.isHidden = true
-        case .downloading:
-          downloadProgressView.isHidden = false
-        case .notDownloaded:
-          break
-        }
-        
-        assetNameLabel.text = asset.name
-        downloadStateLabel.text = downloadState.rawValue
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadStateChangedNotification(_:)), name: AssetPersistenceManager.downloadStateChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadProgressNotification(_:)), name: AssetPersistenceManager.downloadProgressNotification, object: nil)
-      } else {
-        downloadProgressView.isHidden = false
-        assetNameLabel.text = ""
-        downloadStateLabel.text = ""
-      }
+      titleLabel.text = courseSession?.title
     }
   }
+  
+  var asset: Asset?
+//    didSet {
+//      if let asset = asset {
+//        let downloadState = AssetPersistenceManager.shared.downloadState(for: asset)
+//        
+//        switch downloadState {
+//        case .downloaded:
+//          downloadProgressView.isHidden = true
+//        case .downloading:
+//          downloadProgressView.isHidden = false
+//        case .notDownloaded:
+//          break
+//        }
+//        
+//        titleLabel.text = asset.name
+//        downloadStateLabel.text = downloadState.rawValue
+//        
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadStateChangedNotification(_:)), name: AssetPersistenceManager.downloadStateChangedNotification, object: nil)
+//        notificationCenter.addObserver(self, selector: #selector(handleAssetDownloadProgressNotification(_:)), name: AssetPersistenceManager.downloadProgressNotification, object: nil)
+//      } else {
+//        downloadProgressView.isHidden = false
+//        titleLabel.text = ""
+//        downloadStateLabel.text = ""
+//      }
+//    }
   
   // MARK: Initialization
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -76,7 +80,7 @@ class AssetTableViewCell: UITableViewCell {
         self.downloadProgressView.isHidden = true
       }
       
-      self.delegate?.assetTableViewCell(self, downloadStateDidChange: downloadState)
+      self.delegate?.courseSessionTableViewCell(self, downloadStateDidChange: downloadState)
     }
   }
   
@@ -89,7 +93,7 @@ class AssetTableViewCell: UITableViewCell {
   
   func config() {
     let views = [
-      "name": assetNameLabel,
+      "name": titleLabel,
       "downloadState": downloadStateLabel,
       "downloadProgress": downloadProgressView
     ]
@@ -118,6 +122,6 @@ class AssetTableViewCell: UITableViewCell {
   }
 }
 
-protocol AssetTableViewCellDelegate: class {
-  func assetTableViewCell(_ cell: AssetTableViewCell, downloadStateDidChange newState: Asset.DownloadState)
+protocol CourseSessionTableViewCellDelegate: class {
+  func courseSessionTableViewCell(_ cell: CourseSessionTableViewCell, downloadStateDidChange newState: Asset.DownloadState)
 }
