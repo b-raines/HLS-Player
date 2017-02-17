@@ -18,6 +18,7 @@
 		843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */; };
 		843BB1CD1E4E5DC600FA234D /* AssetListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */; };
 		843BB1CF1E4E5F0A00FA234D /* Streams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843BB1CE1E4E5F0A00FA234D /* Streams.plist */; };
+		843E08391E5788D400D64B33 /* FadeAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E08381E5788D400D64B33 /* FadeAnimationController.swift */; };
 		846587E41E54AA8500B40B36 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E31E54AA8500B40B36 /* Meditation.swift */; };
 		846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587E51E54AB0300B40B36 /* CourseSession.swift */; };
 		846587EC1E54ABE000B40B36 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846587EB1E54ABE000B40B36 /* Course.swift */; };
@@ -42,6 +43,7 @@
 		843BB1CA1E4E48E100FA234D /* AssetPlaybackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPlaybackManager.swift; sourceTree = "<group>"; };
 		843BB1CC1E4E5DC600FA234D /* AssetListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetListManager.swift; sourceTree = "<group>"; };
 		843BB1CE1E4E5F0A00FA234D /* Streams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Streams.plist; path = "HLS-Player/Streams.plist"; sourceTree = "<group>"; };
+		843E08381E5788D400D64B33 /* FadeAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimationController.swift; sourceTree = "<group>"; };
 		846587E31E54AA8500B40B36 /* Meditation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		846587E51E54AB0300B40B36 /* CourseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSession.swift; sourceTree = "<group>"; };
 		846587EB1E54ABE000B40B36 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				846587F01E54AC7C00B40B36 /* Managers */,
 				846587EF1E54AC6D00B40B36 /* Models */,
 				846587F61E54AD5300B40B36 /* ViewModels */,
+				843E08381E5788D400D64B33 /* FadeAnimationController.swift */,
 			);
 			path = "HLS-Player";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				843BB1C71E4E3AE400FA234D /* Asset.swift in Sources */,
 				843BB1C31E4E39EB00FA234D /* CourseSessionTableViewCell.swift in Sources */,
 				846587FA1E54B19700B40B36 /* AudioFile.swift in Sources */,
+				843E08391E5788D400D64B33 /* FadeAnimationController.swift in Sources */,
 				846587F51E54AD4D00B40B36 /* CourseViewModel.swift in Sources */,
 				846587E61E54AB0300B40B36 /* CourseSession.swift in Sources */,
 				843BB1CB1E4E48E100FA234D /* AssetPlaybackManager.swift in Sources */,

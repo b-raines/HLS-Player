@@ -13,9 +13,10 @@
         <scene sceneID="Ad2-uu-XHB">
             <objects>
                 <navigationController id="em0-UC-01n" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zpk-9w-inS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zpk-9w-inS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="bFZ-Hh-pKK" kind="relationship" relationship="rootViewController" id="PpP-mX-sa8"/>
@@ -38,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpf-L2-9yp" id="4Zk-9s-Gxd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -52,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAg-8V-HvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="47"/>
+            <point key="canvasLocation" x="561" y="46"/>
         </scene>
     </scenes>
 </document>
