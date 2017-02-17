@@ -17,6 +17,7 @@ class MeditationViewController: UIViewController {
   fileprivate var meditationViewModel: MeditationViewModel?
   fileprivate var courseSessionViewModel: CourseSessionViewModel?
   fileprivate var videoPlayed = false
+  fileprivate var audioPlayed = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,32 +27,49 @@ class MeditationViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    
+    // Clean up
+    if playerViewController != nil {
+      AssetPlaybackManager.shared.setAssetForPlayback(nil)
+      playerViewController?.player = nil
+      playerViewController = nil
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    if !videoPlayed, let courseSession = courseSessionViewModel {
-      playerViewController = AVPlayerViewController()
-      AssetPlaybackManager.shared.setAssetForPlayback(courseSession.videoAsset)
-      
-      present(playerViewController!, animated: true)
-    }
-    
-    if videoPlayed, let meditation = meditationViewModel {
-      playerViewController = AVPlayerViewController()
-      
-      guard let asset = meditation.audioFiles.first?.asset else { return }
-      AssetPlaybackManager.shared.setAssetForPlayback(asset)
-      present(playerViewController!, animated: true)
+    switch (videoPlayed, audioPlayed) {
+    case (false, false):
+      if let courseSession = courseSessionViewModel {
+        playerViewController = AVPlayerViewController()
+        AssetPlaybackManager.shared.setAssetForPlayback(courseSession.videoAsset)
+        
+        present(playerViewController!, animated: true, completion: { [weak self] _ in
+          self?.videoPlayed = true
+        })
+      }
+    case (true, false):
+      if let meditation = meditationViewModel {
+        playerViewController = AVPlayerViewController()
+        
+        guard let asset = meditation.audioFiles.first?.asset else { return }
+        AssetPlaybackManager.shared.setAssetForPlayback(asset)
+        present(playerViewController!, animated: true, completion: { [weak self] _ in
+          self?.audioPlayed = true
+        })
+      }
+    default:
+      _ = navigationController?.popViewController(animated: true)
     }
   }
 }
 
 extension MeditationViewController {
-  convenience init(viewModel: MeditationViewModel) {
+  convenience init(_ viewModel: MeditationViewModel, courseSession: CourseSessionViewModel?) {
+    self.init()
     self.meditationViewModel = viewModel
-    self.courseSessionViewModel = viewModel.courseSession
+    self.courseSessionViewModel = courseSession
   }
 }
 

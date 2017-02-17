@@ -54,7 +54,7 @@ extension CourseTableViewController {
     guard let cell = tableView.cellForRow(at: indexPath) as? CourseSessionTableViewCell else { return }
     guard let meditation = cell.courseSession?.meditation else { return }
     
-    let meditationVC = MeditationViewController(viewModel: meditation)
+    let meditationVC = MeditationViewController(meditation, courseSession: cell.courseSession)
     navigationController?.pushViewController(meditationVC, animated: true)
   }
 

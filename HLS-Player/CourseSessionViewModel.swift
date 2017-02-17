@@ -38,8 +38,7 @@ extension CourseSessionViewModel {
     let audioFile = AudioFile(urlString: "https://d3fw0mens6o5gn.cloudfront.net/audio/Day%2B1_v2-Simple-but-not-easy/index.m3u8")
     let meditation = Meditation(
       title: "Meditation",
-      audioFiles: [audioFile],
-      courseSession: nil
+      audioFiles: [audioFile]
     )
     let session = CourseSession(
       title: title,

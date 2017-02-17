@@ -11,5 +11,4 @@ import Foundation
 struct Meditation {
   let title: String
   let audioFiles: [AudioFile]
-  var courseSession: CourseSession?
 }

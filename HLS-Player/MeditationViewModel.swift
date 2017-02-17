@@ -11,20 +11,13 @@ import Foundation
 struct MeditationViewModel {
   let title: String
   let audioFiles: [AudioFile]
-  let courseSession: CourseSessionViewModel?
 }
 
 extension MeditationViewModel {
   init(meditation: Meditation) {
-    var courseSessionViewModel: CourseSessionViewModel? = nil
-    if let courseSession = meditation.courseSession {
-      courseSessionViewModel = CourseSessionViewModel(courseSession: courseSession)
-    }
-    
     self.init(
       title: meditation.title,
-      audioFiles: meditation.audioFiles,
-      courseSession: courseSessionViewModel
+      audioFiles: meditation.audioFiles
     )
   }
 }
